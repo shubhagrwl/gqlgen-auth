@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "405be62c-2d83-4ca8-8472-66dc7cab2377",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12140162"
+	},
+	"item": [
+		{
+			"name": "SignUP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImM2NzNkM2M5NDdhZWIxOGI2NGU1OGUzZWRlMzI1NWZiZjU3NTI4NWIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdCBVc2VyIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2p1YmlsZWUtYmlvdGVjaCIsImF1ZCI6Imp1YmlsZWUtYmlvdGVjaCIsImF1dGhfdGltZSI6MTY1MDc5ODcyMCwidXNlcl9pZCI6IkRwbTZhOVFJcEpSVEtRTGhoVkJHcUplYVdhYzIiLCJzdWIiOiJEcG02YTlRSXBKUlRLUUxoaFZCR3FKZWFXYWMyIiwiaWF0IjoxNjUwNzk4NzIwLCJleHAiOjE2NTA4MDIzMjAsImVtYWlsIjoidGVzdHVzZXJrdEB5b3BtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0dXNlcmt0QHlvcG1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.hm9BklcF0QJXi8lpkmb4fBYMQ0Vf9QQotbCoRR1oqEINovcn1UjsfydzmNbQqkoz73jXNZDvCWs-xSpUmiNEI1Kqd7uO9QLxtbygByUR-06meo5mOoRse0aZvyFumX0cuuMFpLQZ1cgVLeIE6CbOPbcPG3vObxdWEbqm89JXEe71BAw768HPcsZRmOO2NJFqZSVNP_oNEZpYnirMxkRtLPXPqQlX696qPW80ynvntGrwmFFqZ8PnVAPMVxgXGpGYvWFncrJJIfk7ydkgNIPyfBVbpzOqz0WFTlprK4tbOBCS2QS15ltjx9Uvx2CDYZJUB7DDC-T382f1sPewZG2BtQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  signup(\n    input: {\n      userName: \"ShubhAgrwl\"\n      fullName: \"Shubham Agarwal\"\n      dateOfBirth: \"10/12/1993\"\n      password: \"test\"\n      email: \"shubham.aal@gmail.com\"\n      gender: Male\n      mobile: \"9953940590\"\n      aboutMe: \"owner of the repo\"\n    }\n  ) {\n    LoginResponse: jwtToken {\n      AccessToken\n      RefreshToken\n    },\n    User: user{\n        id\n        fullName\n        email\n    }\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/query",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImM2NzNkM2M5NDdhZWIxOGI2NGU1OGUzZWRlMzI1NWZiZjU3NTI4NWIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdCBVc2VyIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2p1YmlsZWUtYmlvdGVjaCIsImF1ZCI6Imp1YmlsZWUtYmlvdGVjaCIsImF1dGhfdGltZSI6MTY1MDc5ODcyMCwidXNlcl9pZCI6IkRwbTZhOVFJcEpSVEtRTGhoVkJHcUplYVdhYzIiLCJzdWIiOiJEcG02YTlRSXBKUlRLUUxoaFZCR3FKZWFXYWMyIiwiaWF0IjoxNjUwNzk4NzIwLCJleHAiOjE2NTA4MDIzMjAsImVtYWlsIjoidGVzdHVzZXJrdEB5b3BtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0dXNlcmt0QHlvcG1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.hm9BklcF0QJXi8lpkmb4fBYMQ0Vf9QQotbCoRR1oqEINovcn1UjsfydzmNbQqkoz73jXNZDvCWs-xSpUmiNEI1Kqd7uO9QLxtbygByUR-06meo5mOoRse0aZvyFumX0cuuMFpLQZ1cgVLeIE6CbOPbcPG3vObxdWEbqm89JXEe71BAw768HPcsZRmOO2NJFqZSVNP_oNEZpYnirMxkRtLPXPqQlX696qPW80ynvntGrwmFFqZ8PnVAPMVxgXGpGYvWFncrJJIfk7ydkgNIPyfBVbpzOqz0WFTlprK4tbOBCS2QS15ltjx9Uvx2CDYZJUB7DDC-T382f1sPewZG2BtQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  login(\n    input: {\n      password: \"test\"\n      email: \"shubham.aal@gmail.com\"\n    }\n  ) {\n    LoginResponse: jwtToken {\n      AccessToken\n      RefreshToken\n    },\n    User: user{\n        id\n        fullName\n        email\n    }\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/query",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdXVpZCI6IjZkYWJlNWZjLWU0NzctNDhjMy1iN2QxLThmYmQwNWRhMWFlZSIsImF1dGhvcml6ZWQiOnRydWUsImVtYWlsIjoic2h1YmhhbS5hYWxAZ21haWwuY29tIiwiZXhwIjoxNjUxNTg1MjA1LCJ1c2VyX2lkIjoiYTVjNWY2MGQtZTMwMC00YTIyLTlmOTQtMmMwNjYwMDA3OWU2In0.UKQqkDEn4lVgyAF29d6i0oxpnSrEAyi9R2PY34TTzIA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImM2NzNkM2M5NDdhZWIxOGI2NGU1OGUzZWRlMzI1NWZiZjU3NTI4NWIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdCBVc2VyIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2p1YmlsZWUtYmlvdGVjaCIsImF1ZCI6Imp1YmlsZWUtYmlvdGVjaCIsImF1dGhfdGltZSI6MTY1MDc5ODcyMCwidXNlcl9pZCI6IkRwbTZhOVFJcEpSVEtRTGhoVkJHcUplYVdhYzIiLCJzdWIiOiJEcG02YTlRSXBKUlRLUUxoaFZCR3FKZWFXYWMyIiwiaWF0IjoxNjUwNzk4NzIwLCJleHAiOjE2NTA4MDIzMjAsImVtYWlsIjoidGVzdHVzZXJrdEB5b3BtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0dXNlcmt0QHlvcG1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.hm9BklcF0QJXi8lpkmb4fBYMQ0Vf9QQotbCoRR1oqEINovcn1UjsfydzmNbQqkoz73jXNZDvCWs-xSpUmiNEI1Kqd7uO9QLxtbygByUR-06meo5mOoRse0aZvyFumX0cuuMFpLQZ1cgVLeIE6CbOPbcPG3vObxdWEbqm89JXEe71BAw768HPcsZRmOO2NJFqZSVNP_oNEZpYnirMxkRtLPXPqQlX696qPW80ynvntGrwmFFqZ8PnVAPMVxgXGpGYvWFncrJJIfk7ydkgNIPyfBVbpzOqz0WFTlprK4tbOBCS2QS15ltjx9Uvx2CDYZJUB7DDC-T382f1sPewZG2BtQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n getProfile {\n id\n        fullName\n        email\n }\n} ",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/query",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Code",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImM2NzNkM2M5NDdhZWIxOGI2NGU1OGUzZWRlMzI1NWZiZjU3NTI4NWIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdCBVc2VyIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2p1YmlsZWUtYmlvdGVjaCIsImF1ZCI6Imp1YmlsZWUtYmlvdGVjaCIsImF1dGhfdGltZSI6MTY1MDc5ODcyMCwidXNlcl9pZCI6IkRwbTZhOVFJcEpSVEtRTGhoVkJHcUplYVdhYzIiLCJzdWIiOiJEcG02YTlRSXBKUlRLUUxoaFZCR3FKZWFXYWMyIiwiaWF0IjoxNjUwNzk4NzIwLCJleHAiOjE2NTA4MDIzMjAsImVtYWlsIjoidGVzdHVzZXJrdEB5b3BtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0dXNlcmt0QHlvcG1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.hm9BklcF0QJXi8lpkmb4fBYMQ0Vf9QQotbCoRR1oqEINovcn1UjsfydzmNbQqkoz73jXNZDvCWs-xSpUmiNEI1Kqd7uO9QLxtbygByUR-06meo5mOoRse0aZvyFumX0cuuMFpLQZ1cgVLeIE6CbOPbcPG3vObxdWEbqm89JXEe71BAw768HPcsZRmOO2NJFqZSVNP_oNEZpYnirMxkRtLPXPqQlX696qPW80ynvntGrwmFFqZ8PnVAPMVxgXGpGYvWFncrJJIfk7ydkgNIPyfBVbpzOqz0WFTlprK4tbOBCS2QS15ltjx9Uvx2CDYZJUB7DDC-T382f1sPewZG2BtQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  sendCode(\n    input: {\n      email: \"shubham.aal@gmail.com\"\n    }\n  ) {\n      CodeResponse:code \n      \n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/query",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Code",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImM2NzNkM2M5NDdhZWIxOGI2NGU1OGUzZWRlMzI1NWZiZjU3NTI4NWIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGVzdCBVc2VyIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2p1YmlsZWUtYmlvdGVjaCIsImF1ZCI6Imp1YmlsZWUtYmlvdGVjaCIsImF1dGhfdGltZSI6MTY1MDc5ODcyMCwidXNlcl9pZCI6IkRwbTZhOVFJcEpSVEtRTGhoVkJHcUplYVdhYzIiLCJzdWIiOiJEcG02YTlRSXBKUlRLUUxoaFZCR3FKZWFXYWMyIiwiaWF0IjoxNjUwNzk4NzIwLCJleHAiOjE2NTA4MDIzMjAsImVtYWlsIjoidGVzdHVzZXJrdEB5b3BtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ0ZXN0dXNlcmt0QHlvcG1haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.hm9BklcF0QJXi8lpkmb4fBYMQ0Vf9QQotbCoRR1oqEINovcn1UjsfydzmNbQqkoz73jXNZDvCWs-xSpUmiNEI1Kqd7uO9QLxtbygByUR-06meo5mOoRse0aZvyFumX0cuuMFpLQZ1cgVLeIE6CbOPbcPG3vObxdWEbqm89JXEe71BAw768HPcsZRmOO2NJFqZSVNP_oNEZpYnirMxkRtLPXPqQlX696qPW80ynvntGrwmFFqZ8PnVAPMVxgXGpGYvWFncrJJIfk7ydkgNIPyfBVbpzOqz0WFTlprK4tbOBCS2QS15ltjx9Uvx2CDYZJUB7DDC-T382f1sPewZG2BtQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n  verifyCode(\n    input: {\n      email: \"shubham.aal@gmail.com\"\n      code: \"816362\"\n    }\n  ) {\n      Success: success\n      \n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8089/query",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"query"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
