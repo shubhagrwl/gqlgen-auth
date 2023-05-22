@@ -1,0 +1,20 @@
+scalar Date
+
+type Mutation {
+  # users
+  login(input: Login!): LoginResponse!
+  signup(input: UserInput!): LoginResponse!
+  sendCode(input: SendCode!): Response!
+  verifyCode(input: Code!): Success!
+  resetPassword(input: ResetPassword!): Success!
+
+  # todos
+  # createTodo(title: String!): Todo!
+  # updateTodo(id: String!, title: String, completed: Boolean): Todo!
+  # deleteTodo(id: String!): Boolean!
+}
+
+type Query {
+    getProfile: User!
+    # todos: [Todo!]!
+}

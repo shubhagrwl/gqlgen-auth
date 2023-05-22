@@ -1,0 +1,7 @@
+test:
+  driver: postgres
+  open: user=root dbname=userservice sslmode=disable
+
+development:
+  driver: postgres
+  open: user=root dbname=userservice sslmode=disable

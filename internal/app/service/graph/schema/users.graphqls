@@ -1,0 +1,90 @@
+type User {
+  id: String!
+  fullName: String
+  dateOfBirth: String
+  password: String
+  email: String
+  isEmailVerified: Boolean
+  # imageUrl: String
+  # mobileNumber: String
+  # isMobileVerified: Boolean
+  # gender: Gender
+  lastLoginAt: String
+  active: Boolean
+  createdAt: String
+  updatedAt: String
+}
+
+type LoginResponse {
+  jwtToken: TokenDetails!
+  user: User!
+}
+
+type TokenDetails {
+	AccessToken:  String
+	RefreshToken: String
+	AccessUuid:   String
+	RefreshUuid:  String
+	AtExpires:    Int
+	RtExpires:    Int
+}
+
+type Response{
+  success: Boolean!
+  message: String!
+}
+
+type CodeResponse{
+  code: String!
+}
+
+type Success{
+  success:Boolean!
+}
+
+input Login {
+  email: String
+  password: String
+}
+
+input Token {
+  email: String!
+}
+
+input UserInput {
+  fullName: String!
+  userName: String!
+  dateOfBirth: String!
+  password: String!
+  email: String!
+}
+
+input ResetPassword {
+  email: String!
+  code: String!
+  password: String!
+}
+
+input Code{
+  email: String!
+  code: String!
+  service: SendCodeService!
+}
+
+input SendCode {
+  email: String!
+  service: SendCodeService!
+}
+
+enum SendCodeService {
+  ForgetPassword
+  SignUp
+}
+
+enum Gender {
+  Male
+  Female
+  Transgender
+  Other
+}
+

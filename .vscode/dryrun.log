@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/media/shubhagrwl/T719/go/src/github.com/todo/user-service'
+golangci-lint run
+make: Leaving directory '/media/shubhagrwl/T719/go/src/github.com/todo/user-service'
+ 

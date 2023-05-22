@@ -1,0 +1,39 @@
+{
+    "name": "user-management",
+    "profiles": [
+        "dev"
+    ],
+    "label": "master",
+    "version": "00890d5299f9f7e4df8060149f29302c5b0c88c9",
+    "state": null,
+    "propertySources": [{
+        "source": {
+            "Environment": "dev",
+            "Application.name": "go-sample-website",
+
+            "HTTPServer.listen": "0.0.0.0",
+            "HTTPServer.port": "8089",
+            "HTTPServer.readTimeout": 5000000000,
+            "HTTPServer.writeTimeout": 5000000000,
+            "HTTPServer.maxConnsPerIP": 50,
+            "HTTPServer.maxRequestsPerConn": 10,
+            "HTTPServer.maxKeepaliveDuration": 5000000000,
+            
+            "DB.engine": "postgres",
+            "DB.engineConfig.host": "localhost",
+            "DB.engineConfig.port": "5432",
+            "DB.engineConfig.user": "postgres",
+            "DB.engineConfig.dbname": "todo_user",
+            "DB.engineConfig.password": "postgres",
+            "DB.engineConfig.searchPath": "postgres",
+            "DB.engineConfig.sslmode": "disable",
+            "DB.engineConfig.maxOpenConnection": 10,
+            "DB.engineConfig.maxIdleConnection": 3,
+            "DB.engineConfig.connectionMaxLifeTime": 5,
+            "DB.engineConfig.LogMode": true
+
+        }
+
+
+    }]
+}
